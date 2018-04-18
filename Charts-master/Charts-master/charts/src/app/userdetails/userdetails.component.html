@@ -1,0 +1,38 @@
+
+<div *ngIf="user">
+
+    <h2>{{ user.name | uppercase }} Details</h2>
+    <div><span>id: </span>{{user.id}}</div>
+    <div><span>age: </span>{{user.age}}</div>
+    <div>
+        <span>name: </span>{{user.name}}
+    </div>
+    <div>
+        <button (click)="showUserDetail(user)">View chart</button>
+    </div>
+  
+  </div>
+  <div class="my-3 p-3 bg-white rounded box-shadow">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Chart</h6>
+    <div class="media text-muted pt-3" >
+        <ngx-charts-bar-vertical *ngIf="user"
+        
+        [view]="view1"
+        [scheme]="colorScheme1"
+        [results]="userListItem"
+        [gradient]="gradient"
+        [xAxis]="showXAxis"
+        [yAxis]="showYAxis"
+        
+        [showXAxisLabel]="showXAxisLabel"
+        [showYAxisLabel]="showYAxisLabel"
+        [xAxisLabel]="xAxisLabel"
+        [yAxisLabel]="yAxisLabel"
+        
+       
+      >
+      </ngx-charts-bar-vertical>
+      
+   
+    </div>
+  </div>
